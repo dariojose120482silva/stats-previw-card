@@ -21,7 +21,7 @@ body {
     flex-direction: row;
     margin: 0 auto;
     width: 90%;
-    max-width: 1240px;
+    max-width: 1440px;
     background-color: hsl(244, 38%, 16%);
     border-radius: 5px;
 }

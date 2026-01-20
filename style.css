@@ -117,59 +117,86 @@ p {
     /* Deixa a imagem um pouco transparente */
     mix-blend-mode: multiply;
     /* Faz a mágica da mistura com o roxo */
-    filter: grayscale(200%);
+    /* Para telas de Tablet/Notebook Dividido */
 }
 
-@media (max-width: 1024px) {
+
+/* Para telas de Tablet/Notebook Dividido */
+@media (max-width: 1100px) and (min-width: 651px) {
+
     .container {
-        background-repeat: no-repeat;
-        flex-direction: column-reverse;
-        max-width: 540px;
+        flex-direction: row;
+        max-width: 950px;
         width: 100%;
+    }
+
+    .content {
+        flex: 1;
+        padding: 40px;
+        /* Reduz o espaço interno para o texto caber */
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .image-container {
+        flex: 1.9;
+        height: auto;
+    }
+
+    .stats-list {
+        display: flex;
+        flex-direction: row;
+        gap: 35px;
+    }
+
+    h1 {
+        font-size: 28px;
+        /* Diminui a letra para não quebrar muitas linhas */
+    }
+
+    .stats-list {
+        gap: 25px;
+        /* Aproxima os números */
+    }
+
+}
+
+
+
+@media (max-width: 650px) {
+    .container {
+        flex-direction: column-reverse;
+        max-width: 375px;
+        width: 90%;
     }
 
     .content {
         align-items: center;
         padding: 40px 32px;
+        text-align: center;
     }
 
-    .stats-list { 
+    .stats-list {
         flex-direction: column;
+        gap: 40px;
     }
 
     .stats-list li {
-        display: flex;
-        flex-direction: column;
         align-items: center;
-        text-align: center;
-        gap: 10px;
     }
 
     .image-container {
         border-radius: 5px 5px 0 0;
         height: 240px;
         width: 100%;
-        overflow: hidden;
     }
 
-    .header-image {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
 
-    h1 {
-        max-width: 14ch;
+
+    h1, p {
+        text-align: center;
         margin-left: auto;
         margin-right: auto;
-        text-align: center;
-    }
-
-    p {
-        max-width: 29ch;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
     }
 
 
